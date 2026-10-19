@@ -1,0 +1,68 @@
+{
+    "name": "QQ去水印",
+    "trigger": "qq_watermark",
+    "llm_command": "qq_watermark",
+    "type": "direct",
+    "aliases": [
+        "/去水印",
+        "/提取",
+        "/下载"
+    ],
+    "description": "QQ 中用 /去水印、/提取 或 /下载 加链接，解析公开平台视频或图集，下载后发回当前会话。明确的自然语言请求会先确认；只有链接不会触发。密钥只存在本机加密存储里。",
+    "example_arg": "/去水印 https://v.douyin.com/xxxx/",
+    "timeout_sec": 240,
+    "version": "1.0.0",
+    "access_control": {
+        "allow_local": false,
+        "allow_remote_qq": true,
+        "allow_qq_owner": true,
+        "allow_qq_others": true,
+        "allow_group_without_at": true
+    },
+    "settings": {
+        "base_url": {
+            "type": "text",
+            "label": "解析服务地址",
+            "description": "x-download 根地址，插件会自动请求 /v1，不会调用网页 /api。",
+            "default": "https://dl.tomori.de5.net/"
+        },
+        "api_key": {
+            "type": "secret",
+            "label": "解析服务 API Key",
+            "description": "只写入本机加密存储，不会进配置文件、日志或模型上下文。",
+            "default": ""
+        },
+        "request_timeout_sec": {
+            "type": "number",
+            "label": "请求超时(秒)",
+            "description": "解析和下载共用的超时。",
+            "default": 180,
+            "min": 10,
+            "max": 300
+        },
+        "max_file_mb": {
+            "type": "number",
+            "label": "单文件上限(MB)",
+            "description": "超过后停止下载并删除临时文件。",
+            "default": 80,
+            "min": 1,
+            "max": 200
+        },
+        "max_images": {
+            "type": "number",
+            "label": "逐张发送上限",
+            "description": "图集张数不超过该值时逐张发送，否则改发压缩包。",
+            "default": 1,
+            "min": 1,
+            "max": 20
+        },
+        "rate_limit_per_min": {
+            "type": "number",
+            "label": "每分钟次数",
+            "description": "同一 QQ 会话每分钟最多真正下载几次。",
+            "default": 6,
+            "min": 1,
+            "max": 60
+        }
+    }
+}

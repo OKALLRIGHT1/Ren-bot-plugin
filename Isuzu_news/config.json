@@ -1,0 +1,166 @@
+{
+    "name": "日报",
+    "trigger": "magic_daily",
+    "llm_command": "magic_daily",
+    "aliases": [
+        "/日报",
+        "/魔法日报"
+    ],
+    "type": "direct",
+    "description": "生成图片版日报。标题、头图和问候默认跟当前角色走，板块可开关。",
+    "example_arg": "/日报",
+    "timeout_sec": 120,
+    "version": "1.0.0",
+    "author": "Live2D Suzu",
+    "access_control": {
+        "allow_local": true,
+        "allow_remote_qq": true,
+        "allow_qq_owner": true,
+        "allow_qq_others": false,
+        "allow_group_without_at": true
+    },
+    "settings": {
+        "api_token": {
+            "type": "secret",
+            "label": "ALAPI Token",
+            "description": "用于节假日、今日一言、早报 API。留空则这些板块可能没有内容。",
+            "default": ""
+        },
+        "max_anime_count": {
+            "type": "number",
+            "label": "今日新番数量",
+            "description": "建议 4-8。",
+            "default": 8,
+            "min": 1,
+            "max": 12
+        },
+        "max_news_count": {
+            "type": "number",
+            "label": "新闻数量",
+            "description": "世界新闻 / IT资讯各自的最大条数，建议 5-10。",
+            "default": 5,
+            "min": 1,
+            "max": 12
+        },
+        "max_hotword_count": {
+            "type": "number",
+            "label": "B站热点数量",
+            "description": "建议 4-8。",
+            "default": 5,
+            "min": 1,
+            "max": 10
+        },
+        "max_holiday_count": {
+            "type": "number",
+            "label": "摸鱼日历数量",
+            "description": "建议 3-5。",
+            "default": 4,
+            "min": 1,
+            "max": 8
+        },
+        "render_mode": {
+            "type": "choice",
+            "label": "渲染模式",
+            "description": "image=图片模式（Playwright），text=文字模式（无图片依赖）。",
+            "default": "image",
+            "choices": [
+                "image",
+                "text"
+            ]
+        },
+        "render_dpr": {
+            "type": "number",
+            "label": "渲染清晰度 (DPR)",
+            "description": "越大越清晰但更慢，建议 3-6。",
+            "default": 4,
+            "min": 1,
+            "max": 6
+        },
+        "enable_scheduled_push": {
+            "type": "bool",
+            "label": "启用定时推送",
+            "description": "启用后会在指定时间推送日报到目标会话。",
+            "default": true
+        },
+        "scheduled_push_time": {
+            "type": "text",
+            "label": "定时推送时间",
+            "description": "HH:MM 24小时制，例如 08:00。",
+            "default": "10:00"
+        },
+        "scheduled_push_targets": {
+            "type": "list",
+            "item_type": "text",
+            "label": "定时推送目标会话",
+            "description": "填 session_id，例如 group:123456 或 private:123456。仅填数字时默认按 group 处理。",
+            "default": []
+        },
+        "enable_ai_greeting": {
+            "type": "bool",
+            "label": "启用 AI 问候语",
+            "description": "问候风格为「当前角色」时，用当前模型生成一句短问候；失败回退到带角色名的固定句。",
+            "default": true
+        },
+        "title": {
+            "type": "text",
+            "label": "日报标题",
+            "description": "报纸名。留空则用「角色名 + 日报」。",
+            "default": ""
+        },
+        "title_en": {
+            "type": "text",
+            "label": "英文副标题",
+            "description": "标题下方的英文行。留空则用 DAILY REPORT。",
+            "default": ""
+        },
+        "header_image": {
+            "type": "text",
+            "label": "头图路径",
+            "description": "本地图片。留空则用当前角色徽章 / QQ 头像。",
+            "default": ""
+        },
+        "greeting_style": {
+            "type": "choice",
+            "label": "问候风格",
+            "description": "character=当前角色口吻，custom=自定义文案，off=不配问候。",
+            "default": "character",
+            "choices": [
+                "character",
+                "custom",
+                "off"
+            ]
+        },
+        "custom_greeting": {
+            "type": "text",
+            "label": "自定义问候",
+            "description": "问候风格为 custom 时使用。可用 {name}、{title}。",
+            "default": ""
+        },
+        "footer": {
+            "type": "text",
+            "label": "页脚",
+            "description": "图片底部一行小字。留空则用英文副标题。",
+            "default": ""
+        },
+        "sections": {
+            "type": "list",
+            "item_type": "text",
+            "label": "板块顺序",
+            "description": "可选：moyu、bili_hot、today_anime、world_news、it_news、hitokoto。未列出的不显示。",
+            "default": [
+                "moyu",
+                "bili_hot",
+                "today_anime",
+                "world_news",
+                "it_news",
+                "hitokoto"
+            ]
+        },
+        "output_dir": {
+            "type": "text",
+            "label": "本地保存目录",
+            "description": "本地触发时保存图片的目录（相对路径基于项目根目录）。",
+            "default": "output/daily_reports"
+        }
+    }
+}

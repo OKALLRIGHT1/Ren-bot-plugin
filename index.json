@@ -1,0 +1,323 @@
+{
+    "schema": 1,
+    "name": "Ren-bot plugins",
+    "source": "https://github.com/OKALLRIGHT1/Ren-bot-plugin",
+    "note": "Source catalog only. Per-plugin release zips and sha256 are not published yet.",
+    "plugins": [
+        {
+            "id": "agent_runtime",
+            "name": "Agent 运行时",
+            "trigger": "agent_runtime",
+            "version": "0.0.0",
+            "type": "direct",
+            "summary": "查看轻量 AgentRuntime 的工具目录、MCP 状态，并生成受控能力安装计划。不会直接执行安装或写配置。",
+            "path": "agent_runtime"
+        },
+        {
+            "id": "agently_mail",
+            "name": "Agent Mail",
+            "trigger": "agently_mail",
+            "version": "0.2.0",
+            "type": "direct",
+            "summary": "通过本机 agently-cli 查询、读取、搜索和按确认流程发送邮件；支持新邮件 QQ 私聊通知。",
+            "path": "agently_mail"
+        },
+        {
+            "id": "app_control",
+            "name": "主程序控制",
+            "trigger": "app_control",
+            "version": "1.0.0",
+            "type": "direct",
+            "summary": "通过受权限控制的指令重启主程序。",
+            "path": "app_control"
+        },
+        {
+            "id": "backup_manager",
+            "name": "备份恢复",
+            "trigger": "backup_manager",
+            "version": "0.0.0",
+            "type": "react",
+            "summary": "管理关键文件快照。参数格式：action ||| arg；action可用 create/list/restore。restore 需确认；仅本地或管理员私聊。",
+            "path": "backup_manager"
+        },
+        {
+            "id": "code_agent",
+            "name": "代码代理",
+            "trigger": "code_agent",
+            "version": "0.0.0",
+            "type": "direct",
+            "summary": "把代码项目分析或修改任务委托给本机 Codex CLI / Claude Code。修改模式必须确认。",
+            "path": "code_agent"
+        },
+        {
+            "id": "delegate_status",
+            "name": "副脑任务状态",
+            "trigger": "delegate_status",
+            "version": "0.0.0",
+            "type": "direct",
+            "summary": "查看最近的副脑委托任务，或根据任务ID查看详情。",
+            "path": "delegate_status"
+        },
+        {
+            "id": "diary_export",
+            "name": "日记管家",
+            "trigger": "diary_manager",
+            "version": "1.1.0",
+            "type": "react",
+            "summary": "管理每日总结日记。功能：1.查询特定日期的日记(如:昨天干了什么)；2.导出所有日记为Markdown文件(如:导出日记)。",
+            "path": "diary_export"
+        },
+        {
+            "id": "dice_plugin",
+            "name": "骰子",
+            "trigger": "dice_roll",
+            "version": "1.0.0",
+            "type": "direct",
+            "summary": "掷骰指令（D&D/CoC/选项表）",
+            "path": "dice_plugin"
+        },
+        {
+            "id": "disaster_warning",
+            "name": "灾害预警",
+            "trigger": "disaster_warning",
+            "version": "0.3.0",
+            "type": "react",
+            "summary": "按关注地区查询地震/台风/气象预警。后台自动推送默认关闭，需要时再打开。",
+            "path": "disaster_warning"
+        },
+        {
+            "id": "egg_search",
+            "name": "洛克王国世界查蛋器",
+            "trigger": "egg_search",
+            "version": "1.0.0",
+            "type": "direct",
+            "summary": "输入尺寸和重量，返回匹配的精灵种类。",
+            "path": "egg_search"
+        },
+        {
+            "id": "info_gateway",
+            "name": "Info Gateway",
+            "trigger": "info_gateway",
+            "version": "0.1.0",
+            "type": "react",
+            "summary": "Expose shared information sources such as ALAPI weather and daily news.",
+            "path": "info_gateway"
+        },
+        {
+            "id": "Isuzu_news",
+            "name": "日报",
+            "trigger": "magic_daily",
+            "version": "1.0.0",
+            "type": "direct",
+            "summary": "生成图片版日报。标题、头图和问候默认跟当前角色走，板块可开关。",
+            "path": "Isuzu_news"
+        },
+        {
+            "id": "life_manager",
+            "name": "生活管家",
+            "trigger": "database",
+            "version": "0.0.0",
+            "type": "react",
+            "summary": "记账与提醒。指令：add_bill 金额 事项 / list_bills / add_reminder 时间 事项",
+            "path": "life_manager"
+        },
+        {
+            "id": "llm_monitor",
+            "name": "模型监控",
+            "trigger": "llm_monitor",
+            "version": "0.0.0",
+            "type": "react",
+            "summary": "查看最近模型调用记录与成功率。参数格式：action ||| limit；action可用 recent/summary。",
+            "path": "llm_monitor"
+        },
+        {
+            "id": "local_knowledge",
+            "name": "本地第二大脑",
+            "trigger": "knowledge_base",
+            "version": "1.1.0",
+            "type": "react",
+            "summary": "用于管理本地知识库。支持指令：learn (扫描文件夹并学习), search (搜索知识库)。参数：指令 ||| 内容(文件夹路径或查询词)",
+            "path": "local_knowledge"
+        },
+        {
+            "id": "meme_pack",
+            "name": "表情包库",
+            "trigger": "meme_pack",
+            "version": "0.1.0",
+            "type": "direct",
+            "summary": "数据库版表情包系统：支持目录导入、按情绪/关键词选图、QQ 手动发送，并提供自动发送钩子。",
+            "path": "meme_pack"
+        },
+        {
+            "id": "moegirl_wiki",
+            "name": "萌娘百科查询",
+            "trigger": "moegirl_wiki",
+            "version": "0.0.0",
+            "type": "delegate",
+            "summary": "查询萌娘百科词条、角色、作品、术语，并返回主词条与相关语境。",
+            "path": "moegirl_wiki"
+        },
+        {
+            "id": "music_player",
+            "name": "音乐播放器",
+            "trigger": "播放音乐",
+            "version": "1.2.0",
+            "type": "react",
+            "summary": "播放本地音乐。明确歌名填歌名；要推荐填「推荐」；随便听填「随机」。只评价歌曲时不要调用。",
+            "path": "music_player"
+        },
+        {
+            "id": "open_app",
+            "name": "快速启动",
+            "trigger": "打开",
+            "version": "0.0.0",
+            "type": "direct",
+            "summary": "直接打开本地软件（仅信任列表；群聊禁用；管理员仅私聊）",
+            "path": "open_app"
+        },
+        {
+            "id": "owner_channel_bridge",
+            "name": "主人跨通道近史",
+            "trigger": "owner_channel_bridge",
+            "version": "1.0.0",
+            "type": "delegate",
+            "summary": "主人按需查询桌面或 QQ 另一侧的近史摘要。默认会话仍隔离，不会自动混进 prompt。参数：desktop|qq|other ||| 可选关键词",
+            "path": "owner_channel_bridge"
+        },
+        {
+            "id": "qq_draw",
+            "name": "QQ生图",
+            "trigger": "qq生图",
+            "version": "1.5.0",
+            "type": "direct",
+            "summary": "仅在 QQ 中用固定斜杠命令触发生图。模型唯一来自「模型与路由」：先给模型勾选画图用途，再在任务路由「画图」里手动选择要用的模型与顺序（不会自动全选）。",
+            "path": "qq_draw"
+        },
+        {
+            "id": "qq_file_browser",
+            "name": "QQ文件浏览",
+            "trigger": "qq文件",
+            "version": "1.0.0",
+            "type": "direct",
+            "summary": "在 QQ 中安全浏览 /bot 虚拟目录并发送文件（零拷贝）。",
+            "path": "qq_file_browser"
+        },
+        {
+            "id": "qq_help",
+            "name": "QQ功能帮助",
+            "trigger": "qq帮助",
+            "version": "1.0.0",
+            "type": "direct",
+            "summary": "在 QQ 中查看当前可用功能、常用命令和插件说明。",
+            "path": "qq_help"
+        },
+        {
+            "id": "qq_music",
+            "name": "QQ点歌",
+            "trigger": "qq_music",
+            "version": "1.1.0",
+            "type": "direct",
+            "summary": "通过多平台音乐网关搜索歌曲，默认先搜 QQ 音乐，搜不到再回退网易云，并直接以 QQ 语音形式回发。",
+            "path": "qq_music"
+        },
+        {
+            "id": "qq_reminder",
+            "name": "QQ定时提醒",
+            "trigger": "qq提醒",
+            "version": "1.0.0",
+            "type": "direct",
+            "summary": "在 QQ 中创建仅发给自己的定时提醒，支持工作日、每天等周期提醒。",
+            "path": "qq_reminder"
+        },
+        {
+            "id": "qq_role_switch",
+            "name": "QQ角色切换",
+            "trigger": "qq角色",
+            "version": "1.0.0",
+            "type": "direct",
+            "summary": "在 QQ 中查看角色列表，并用斜杠命令快速切换角色。也支持直接用 `/角色名` 切换。",
+            "path": "qq_role_switch"
+        },
+        {
+            "id": "qq_screenshot",
+            "name": "QQ远程截图",
+            "trigger": "qq截图",
+            "version": "1.0.0",
+            "type": "direct",
+            "summary": "在 QQ 中直接把当前电脑屏幕截图回发给主人。",
+            "path": "qq_screenshot"
+        },
+        {
+            "id": "qq_watermark",
+            "name": "QQ去水印",
+            "trigger": "qq_watermark",
+            "version": "1.0.0",
+            "type": "direct",
+            "summary": "QQ 中用 /去水印、/提取 或 /下载 加链接，解析公开平台视频或图集，下载后发回当前会话。明确的自然语言请求会先确认；只有链接不会触发。密钥只存在本机加密存储里。",
+            "path": "qq_watermark"
+        },
+        {
+            "id": "skill_runtime",
+            "name": "技能运行时",
+            "trigger": "skill_runtime",
+            "version": "0.0.0",
+            "type": "direct",
+            "summary": "管理运行时 Skill 系统，支持列出、启用、停用、重载兼容 SKILL.md 的技能目录。",
+            "path": "skill_runtime"
+        },
+        {
+            "id": "system_monitor",
+            "name": "系统运维",
+            "trigger": "monitor",
+            "version": "0.0.0",
+            "type": "react",
+            "summary": "系统监控与控制中枢。支持：check / cpu / memory / disk / temperature / gpu / all / start / stop / status / set_volume / mute / set_brightness / lock_screen。",
+            "path": "system_monitor"
+        },
+        {
+            "id": "task_manager",
+            "name": "任务中枢",
+            "trigger": "task",
+            "version": "0.0.0",
+            "type": "react",
+            "summary": "任务与主动建议中枢。支持：add_task / list_tasks / complete_task / delete_task / today_schedule / check_tasks / daily_summary / suggest / check_overdue / check_urgent / start / stop / status。",
+            "path": "task_manager"
+        },
+        {
+            "id": "timer",
+            "name": "番茄钟/倒计时",
+            "trigger": "timer",
+            "version": "1.0.0",
+            "type": "react",
+            "summary": "当用户要求倒计时、专注、番茄钟时使用。参数为分钟数(数字)。",
+            "path": "timer"
+        },
+        {
+            "id": "vision",
+            "name": "视觉感知",
+            "trigger": "vision",
+            "version": "0.0.0",
+            "type": "observe",
+            "summary": "能够截图或拍照，并分析当前屏幕或摄像头画面",
+            "path": "vision"
+        },
+        {
+            "id": "what_to_eat",
+            "name": "今天吃什么",
+            "trigger": "what_to_eat",
+            "version": "0.0.0",
+            "type": "direct",
+            "summary": "仅响应斜杠命令，支持附图推荐、查做法，以及 /吃什么十连 这类拼图抽卡。",
+            "path": "what_to_eat"
+        },
+        {
+            "id": "xinsanguo_voice",
+            "name": "新三国语音",
+            "trigger": "xinsanguo_voice",
+            "version": "0.0.0",
+            "type": "direct",
+            "summary": "识别新三国经典台词关键词并回发对应音频文件。",
+            "path": "xinsanguo_voice"
+        }
+    ]
+}

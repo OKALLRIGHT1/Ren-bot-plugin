@@ -1,0 +1,125 @@
+{
+  "name": "今天吃什么",
+  "trigger": "what_to_eat",
+  "llm_command": "what_to_eat",
+  "type": "direct",
+  "aliases": [
+    "/吃什么",
+    "/今天吃什么",
+    "/中午吃什么",
+    "/晚上吃什么",
+    "/不知道吃什么",
+    "/做点什么吃的",
+    "/做法"
+  ],
+  "description": "仅响应斜杠命令，支持附图推荐、查做法，以及 /吃什么十连 这类拼图抽卡。",
+  "example_arg": "/今天吃什么 / 西红柿炒鸡蛋怎么做 / 做点什么吃的 / 吃什么十连",
+  "timeout_sec": 3,
+  "settings": {
+    "rate_limit_enabled": {
+      "type": "bool",
+      "label": "启用频率限制",
+      "description": "避免连续多次触发时刷屏",
+      "default": true
+    },
+    "rate_limit_max": {
+      "type": "number",
+      "label": "时间窗最大触发次数",
+      "description": "超过后强制推荐食物",
+      "default": 3,
+      "min": 1,
+      "max": 20
+    },
+    "rate_limit_window_seconds": {
+      "type": "number",
+      "label": "频率限制时间窗(秒)",
+      "description": "统计触发次数的时间窗",
+      "default": 60,
+      "min": 5,
+      "max": 600
+    },
+    "echo_cooldown_enabled": {
+      "type": "bool",
+      "label": "启用复读冷却",
+      "description": "复读后短时间内强制推荐食物",
+      "default": true
+    },
+    "echo_cooldown_seconds": {
+      "type": "number",
+      "label": "复读冷却秒数",
+      "description": "复读后的冷却时间",
+      "default": 15,
+      "min": 1,
+      "max": 300
+    },
+    "session_cooldown_enabled": {
+      "type": "bool",
+      "label": "启用会话冷却",
+      "description": "仅对“吃什么”类纯推荐生效，避免同一会话频繁刷屏",
+      "default": true
+    },
+    "session_cooldown_seconds": {
+      "type": "number",
+      "label": "会话冷却秒数",
+      "description": "同一会话内再次触发前需要等待的秒数",
+      "default": 600,
+      "min": 10,
+      "max": 7200
+    },
+    "time_awareness_enabled": {
+      "type": "bool",
+      "label": "启用时间感知",
+      "description": "未明确说早餐/午餐/晚餐时，按当前时间偏向推荐对应餐段",
+      "default": true
+    },
+    "breakfast_end_hour": {
+      "type": "number",
+      "label": "早餐截止小时",
+      "description": "小于这个小时优先按早餐推荐",
+      "default": 10,
+      "min": 5,
+      "max": 12
+    },
+    "lunch_end_hour": {
+      "type": "number",
+      "label": "午餐截止小时",
+      "description": "小于这个小时优先按午餐推荐",
+      "default": 14,
+      "min": 10,
+      "max": 17
+    },
+    "dinner_end_hour": {
+      "type": "number",
+      "label": "晚餐截止小时",
+      "description": "小于这个小时优先按晚餐推荐",
+      "default": 21,
+      "min": 17,
+      "max": 23
+    },
+    "prefer_homestyle": {
+      "type": "bool",
+      "label": "家常优先",
+      "description": "默认优先推荐更像家常菜的菜谱",
+      "default": true
+    },
+    "avoid_non_homestyle_for_eat": {
+      "type": "bool",
+      "label": "避开偏商用菜",
+      "description": "在“吃什么”推荐里尽量避开配方料、饮品和明显偏商用品项",
+      "default": true
+    },
+    "prefer_complete_recipe": {
+      "type": "bool",
+      "label": "优先完整菜谱",
+      "description": "优先步骤和配料更完整的菜谱来源",
+      "default": true
+    }
+  },
+  "access_control": {
+    "allow_local": true,
+    "allow_remote_qq": true,
+    "allow_qq_owner": true,
+    "allow_qq_others": true,
+    "allow_group_without_at": true
+  }
+}
