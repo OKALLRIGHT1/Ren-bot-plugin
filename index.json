@@ -77,15 +77,6 @@
             "path": "dice_plugin"
         },
         {
-            "id": "disaster_warning",
-            "name": "灾害预警",
-            "trigger": "disaster_warning",
-            "version": "0.3.0",
-            "type": "react",
-            "summary": "按关注地区查询地震/台风/气象预警。后台自动推送默认关闭，需要时再打开。",
-            "path": "disaster_warning"
-        },
-        {
             "id": "egg_search",
             "name": "洛克王国世界查蛋器",
             "trigger": "egg_search",
