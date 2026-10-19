@@ -248,15 +248,6 @@
             "path": "qq_watermark"
         },
         {
-            "id": "skill_runtime",
-            "name": "技能运行时",
-            "trigger": "skill_runtime",
-            "version": "0.0.0",
-            "type": "direct",
-            "summary": "管理运行时 Skill 系统，支持列出、启用、停用、重载兼容 SKILL.md 的技能目录。",
-            "path": "skill_runtime"
-        },
-        {
             "id": "system_monitor",
             "name": "系统运维",
             "trigger": "monitor",

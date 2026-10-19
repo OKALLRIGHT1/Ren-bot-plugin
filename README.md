@@ -13,9 +13,10 @@
 - memory_tools
 - workspace_ops
 - user_files
-- mcp_tools
 
 `plugins/plugin_utils.py` 也留在主程序里。
+
+技能运行时（`skill_runtime`）和 MCP 工具桥（`mcp_tools`）不进这个仓库。MCP 从一开始就没上传。
 
 ## 这份副本清掉的本机信息
 
