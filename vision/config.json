@@ -1,5 +1,5 @@
 {
-  "name": "视觉感知",
+  "name": "屏幕",
   "trigger": "vision",
   "llm_command": "screenshot",
   "aliases": [
@@ -40,7 +40,7 @@
     "屏幕截图"
   ],
   "type": "observe",
-  "description": "看看屏幕/摄像头并分析；在 QQ 里说「截图发我」会把当前屏幕发回给主人。",
+  "description": "包含：看屏幕/摄像头分析；QQ 里说「截图发我」发回主人。",
   "example_arg": "看看屏幕",
   "timeout_sec": 15,
   "access_control": {

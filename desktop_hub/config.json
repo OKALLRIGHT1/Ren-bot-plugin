@@ -30,7 +30,7 @@
         "启动"
     ],
     "type": "react",
-    "description": "打开信任列表里的本地软件，并查看或调整 CPU/内存/音量/亮度/锁屏。",
+    "description": "包含：打开本机软件、CPU/内存、音量/亮度、锁屏。",
     "example_arg": "计算器",
     "timeout_sec": 10,
     "access_control": {

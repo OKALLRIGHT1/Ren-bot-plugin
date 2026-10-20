@@ -45,7 +45,7 @@
         "提醒"
     ],
     "type": "react",
-    "description": "记账、本地提醒、待办任务、番茄钟，以及 QQ 周期提醒。",
+    "description": "包含：记账、提醒、待办、番茄钟、QQ周期提醒。",
     "example_arg": "add_bill 15 奶茶",
     "timeout_sec": 360,
     "enabled_by_default": true,

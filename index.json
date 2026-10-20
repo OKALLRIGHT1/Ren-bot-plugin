@@ -37,7 +37,7 @@
             "trigger": "desktop_hub",
             "version": "1.0.0",
             "type": "react",
-            "summary": "打开信任列表里的本地软件，并查看或调整 CPU/内存/音量/亮度/锁屏。",
+            "summary": "包含：打开本机软件、CPU/内存、音量/亮度、锁屏。",
             "path": "desktop_hub"
         },
         {
@@ -73,7 +73,7 @@
             "trigger": "magic_daily",
             "version": "1.1.0",
             "type": "direct",
-            "summary": "图片版日报，并查询实时/未来几天天气。ALAPI Token 填在设置→信息源或本插件配置里。",
+            "summary": "包含：图片日报、实时天气。ALAPI Token 填在设置→信息源或插件管理→日报。",
             "path": "Isuzu_news"
         },
         {
@@ -82,7 +82,7 @@
             "trigger": "life_hub",
             "version": "1.0.0",
             "type": "react",
-            "summary": "记账、本地提醒、待办、番茄钟，以及 QQ 周期打卡提醒。",
+            "summary": "包含：记账、提醒、待办、番茄钟、QQ周期提醒。",
             "path": "life_hub"
         },
         {
@@ -118,7 +118,7 @@
             "trigger": "播放音乐",
             "version": "1.2.0",
             "type": "react",
-            "summary": "播放本地音乐。明确歌名填歌名；要推荐填「推荐」；随便听填「随机」。只评价歌曲时不要调用。",
+            "summary": "播放电脑里的本地音乐。QQ 搜歌发语音请用「QQ点歌」。",
             "path": "music_player"
         },
         {
@@ -136,7 +136,7 @@
             "trigger": "owner_console",
             "version": "1.0.0",
             "type": "react",
-            "summary": "/帮助、/重启（仅主人）、Agent 自检、副脑任务、模型调用摘要。",
+            "summary": "包含：/帮助、/重启（仅主人）、Agent自检、副脑任务、模型监控。",
             "path": "owner_console"
         },
         {
@@ -154,7 +154,7 @@
             "trigger": "qq文件",
             "version": "1.0.0",
             "type": "direct",
-            "summary": "在 QQ 中安全浏览 /bot 虚拟目录并发送文件（零拷贝）。",
+            "summary": "QQ 里用 /文件 浏览并发送本机文件。项目代码用「工作区」，桌面/下载用「用户文件」。",
             "path": "qq_file_browser"
         },
         {
@@ -163,7 +163,7 @@
             "trigger": "qq_music",
             "version": "1.1.0",
             "type": "direct",
-            "summary": "通过多平台音乐网关搜索歌曲，默认先搜 QQ 音乐，搜不到再回退网易云，并直接以 QQ 语音形式回发。",
+            "summary": "QQ 里搜歌并以语音发回。API Key 填在插件管理→QQ点歌。本地文件夹请用「音乐播放器」。",
             "path": "qq_music"
         },
         {
@@ -190,7 +190,7 @@
             "trigger": "vision",
             "version": "1.1.0",
             "type": "observe",
-            "summary": "看屏幕/摄像头并分析；QQ 里说「截图发我」会把当前屏幕发回给主人。",
+            "summary": "包含：看屏幕/摄像头分析；QQ 里说「截图发我」发回主人。",
             "path": "vision"
         },
         {

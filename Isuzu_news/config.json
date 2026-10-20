@@ -17,7 +17,7 @@
         "/信息源"
     ],
     "type": "direct",
-    "description": "生成图片版日报。标题、头图和问候默认跟当前角色走，板块可开关。",
+    "description": "包含：图片日报、实时天气。需填写 ALAPI Token。",
     "example_arg": "/日报",
     "timeout_sec": 120,
     "version": "1.0.0",

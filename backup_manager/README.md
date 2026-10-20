@@ -1,15 +1,22 @@
+<!-- MANUAL README -->
+
 # 备份恢复
 
-管理关键文件快照。参数格式：action ||| arg；action可用 create/list/restore。restore 需确认；仅本地或管理员私聊。
+给关键文件做快照，必要时恢复。恢复必须确认。
 
 ## 怎么用
 
-- 触发词：`backup_manager`
-- 类型：`react`
-- 别名：`备份`、`恢复`、`快照`、`回滚快照`
-- 示例：`create ||| before_codex_change`
+- `备份一下，备注 before_change`
+- `看看有哪些快照`
+- `恢复这个快照`（会先确认）
+- 也可以：`create ||| before_codex_change`、`list`、`restore ||| 快照名`
 
 ## 权限
 
-可用：本地桌面、QQ 远程、QQ 主人。
-不可用：QQ 他人、群聊未 @。
+- 本地可用
+- QQ 仅主人私聊
+- 其他人不可用
+
+## 要填的配置
+
+不用填 API Key。快照在 `data/backups/`。

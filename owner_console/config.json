@@ -44,7 +44,7 @@
         "最近委托任务"
     ],
     "type": "react",
-    "description": "主人侧控制台：/帮助、/重启（仅主人）、Agent 自检、副脑任务、模型调用摘要。",
+    "description": "包含：/帮助、/重启（仅主人）、Agent自检、副脑任务、模型监控。",
     "example_arg": "/帮助",
     "timeout_sec": 10,
     "version": "1.0.0",

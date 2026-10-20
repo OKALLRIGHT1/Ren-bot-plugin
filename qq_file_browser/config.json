@@ -13,7 +13,7 @@
         "/help",
         "[文件]"
     ],
-    "description": "在 QQ 中安全浏览 /bot 虚拟目录并发送文件（零拷贝）。",
+    "description": "QQ 里用 /文件 浏览并发送本机文件。项目代码用「工作区」，桌面/下载用「用户文件」。",
     "example_arg": "/文件 /ls",
     "timeout_sec": 12,
     "version": "1.0.0",
