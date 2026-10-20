@@ -9,6 +9,31 @@ class Plugin:
     name = "llm_monitor"
     type = "react"
 
+    def get_tool_schema(self):
+        return {
+            "name": "llm_monitor",
+            "description": "查看最近模型调用记录与成功率。action 为 summary 或 recent。",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "action": {
+                        "type": "string",
+                        "enum": ["summary", "recent"],
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "description": "查看条数，默认 50",
+                    },
+                },
+            },
+        }
+
+    def format_invocation(self, arguments):
+        args = dict(arguments or {})
+        action = str(args.get("action") or "summary").strip() or "summary"
+        limit = args.get("limit") or 50
+        return f"{action} ||| {limit}"
+
     async def run(self, args: str, ctx: Dict[str, Any]) -> str:
         raw = (args or "").strip()
         action = "summary"

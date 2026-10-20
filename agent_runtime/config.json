@@ -1,4 +1,5 @@
 {
+    "library": true,
     "name": "Agent 运行时",
     "trigger": "agent_runtime",
     "llm_command": "agent_runtime",

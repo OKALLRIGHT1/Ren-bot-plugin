@@ -1,4 +1,5 @@
 {
+    "library": true,
     "name": "快速启动",
     "trigger": "打开",
     "llm_command": "open_app",

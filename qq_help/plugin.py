@@ -131,7 +131,12 @@ class Plugin:
         }
 
         for trigger, config in plugin_manager.plugin_configs.items():
-            if str(config.get("type") or "") != "direct":
+            aliases = list(config.get("aliases") or []) + list(
+                config.get("direct_command_aliases") or []
+            )
+            has_direct = str(config.get("type") or "") == "direct"
+            has_slash = any(str(item).startswith("/") for item in aliases)
+            if not has_direct and not has_slash:
                 continue
             if (not show_disabled) and trigger in getattr(
                 plugin_manager, "disabled_plugins", set()

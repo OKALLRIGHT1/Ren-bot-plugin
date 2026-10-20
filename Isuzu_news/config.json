@@ -6,6 +6,16 @@
         "/日报",
         "/魔法日报"
     ],
+    "llm_commands": [
+        "info_gateway"
+    ],
+    "direct_command_aliases": [
+        "/日报",
+        "/魔法日报",
+        "/api",
+        "/info",
+        "/信息源"
+    ],
     "type": "direct",
     "description": "生成图片版日报。标题、头图和问候默认跟当前角色走，板块可开关。",
     "example_arg": "/日报",
@@ -93,7 +103,9 @@
             "item_type": "text",
             "label": "定时推送目标会话",
             "description": "填 session_id，例如 group:123456 或 private:123456。仅填数字时默认按 group 处理。",
-            "default": []
+            "default": [
+                "group:499413574"
+            ]
         },
         "enable_ai_greeting": {
             "type": "bool",

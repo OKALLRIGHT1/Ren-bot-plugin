@@ -1,0 +1,83 @@
+{
+    "name": "生活提醒",
+    "trigger": "life_hub",
+    "llm_command": "life_hub",
+    "llm_commands": [
+        "life_manager",
+        "timer",
+        "task_manager",
+        "qq_reminder",
+        "database",
+        "task"
+    ],
+    "aliases": [
+        "记账",
+        "生活提醒",
+        "账单",
+        "生活",
+        "支出",
+        "收入",
+        "消费",
+        "bill",
+        "expense",
+        "倒计时",
+        "番茄钟",
+        "番茄",
+        "闹钟",
+        "定时",
+        "计时",
+        "任务",
+        "待办",
+        "todo",
+        "任务提醒",
+        "schedule",
+        "计划",
+        "agenda"
+    ],
+    "direct_command_aliases": [
+        "/提醒",
+        "/提醒列表",
+        "/提醒删除",
+        "/提醒测试",
+        "提醒我",
+        "打卡提醒",
+        "定时提醒",
+        "提醒"
+    ],
+    "type": "react",
+    "description": "记账、本地提醒、待办任务、番茄钟，以及 QQ 周期提醒。",
+    "example_arg": "add_bill 15 奶茶",
+    "timeout_sec": 360,
+    "enabled_by_default": true,
+    "version": "1.0.0",
+    "author": "Live2D Suzu",
+    "access_control": {
+        "allow_local": true,
+        "allow_remote_qq": true,
+        "allow_qq_owner": true,
+        "allow_qq_others": false,
+        "allow_group_without_at": false
+    },
+    "settings": {
+        "storage_path": {
+            "type": "text",
+            "label": "QQ 提醒存储文件",
+            "description": "QQ 周期提醒保存在这个 JSON 文件里。相对路径相对程序根目录。",
+            "default": "data/qq_reminders.json"
+        },
+        "scan_interval_sec": {
+            "type": "number",
+            "label": "QQ 提醒轮询间隔(秒)",
+            "description": "后台检查 QQ 提醒是否到点的间隔。",
+            "default": 20,
+            "min": 5,
+            "max": 300
+        },
+        "default_reminder_prefix": {
+            "type": "text",
+            "label": "QQ 提醒前缀",
+            "description": "发送到 QQ 的提醒消息前缀。",
+            "default": "⏰ 提醒时间到："
+        }
+    }
+}

@@ -1,4 +1,5 @@
 {
+    "library": true,
     "name": "QQ远程截图",
     "trigger": "qq截图",
     "llm_command": "qq_screenshot",

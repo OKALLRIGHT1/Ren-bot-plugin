@@ -5,15 +5,6 @@
     "note": "Source catalog only. Per-plugin release zips and sha256 are not published yet.",
     "plugins": [
         {
-            "id": "agent_runtime",
-            "name": "Agent 运行时",
-            "trigger": "agent_runtime",
-            "version": "0.0.0",
-            "type": "direct",
-            "summary": "查看轻量 AgentRuntime 的工具目录、MCP 状态，并生成受控能力安装计划。不会直接执行安装或写配置。",
-            "path": "agent_runtime"
-        },
-        {
             "id": "agently_mail",
             "name": "Agent Mail",
             "trigger": "agently_mail",
@@ -21,15 +12,6 @@
             "type": "direct",
             "summary": "通过本机 agently-cli 查询、读取、搜索和按确认流程发送邮件；支持新邮件 QQ 私聊通知。",
             "path": "agently_mail"
-        },
-        {
-            "id": "app_control",
-            "name": "主程序控制",
-            "trigger": "app_control",
-            "version": "1.0.0",
-            "type": "direct",
-            "summary": "通过受权限控制的指令重启主程序。",
-            "path": "app_control"
         },
         {
             "id": "backup_manager",
@@ -50,13 +32,13 @@
             "path": "code_agent"
         },
         {
-            "id": "delegate_status",
-            "name": "副脑任务状态",
-            "trigger": "delegate_status",
-            "version": "0.0.0",
-            "type": "direct",
-            "summary": "查看最近的副脑委托任务，或根据任务ID查看详情。",
-            "path": "delegate_status"
+            "id": "desktop_hub",
+            "name": "桌面",
+            "trigger": "desktop_hub",
+            "version": "1.0.0",
+            "type": "react",
+            "summary": "打开信任列表里的本地软件，并查看或调整 CPU/内存/音量/亮度/锁屏。",
+            "path": "desktop_hub"
         },
         {
             "id": "diary_export",
@@ -86,40 +68,22 @@
             "path": "egg_search"
         },
         {
-            "id": "info_gateway",
-            "name": "Info Gateway",
-            "trigger": "info_gateway",
-            "version": "0.1.0",
-            "type": "react",
-            "summary": "Expose shared information sources such as ALAPI weather and daily news.",
-            "path": "info_gateway"
-        },
-        {
             "id": "Isuzu_news",
             "name": "日报",
             "trigger": "magic_daily",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "type": "direct",
-            "summary": "生成图片版日报。标题、头图和问候默认跟当前角色走，板块可开关。",
+            "summary": "图片版日报，并查询实时/未来几天天气。ALAPI Token 填在设置→信息源或本插件配置里。",
             "path": "Isuzu_news"
         },
         {
-            "id": "life_manager",
-            "name": "生活管家",
-            "trigger": "database",
-            "version": "0.0.0",
+            "id": "life_hub",
+            "name": "生活提醒",
+            "trigger": "life_hub",
+            "version": "1.0.0",
             "type": "react",
-            "summary": "记账与提醒。指令：add_bill 金额 事项 / list_bills / add_reminder 时间 事项",
-            "path": "life_manager"
-        },
-        {
-            "id": "llm_monitor",
-            "name": "模型监控",
-            "trigger": "llm_monitor",
-            "version": "0.0.0",
-            "type": "react",
-            "summary": "查看最近模型调用记录与成功率。参数格式：action ||| limit；action可用 recent/summary。",
-            "path": "llm_monitor"
+            "summary": "记账、本地提醒、待办、番茄钟，以及 QQ 周期打卡提醒。",
+            "path": "life_hub"
         },
         {
             "id": "local_knowledge",
@@ -158,15 +122,6 @@
             "path": "music_player"
         },
         {
-            "id": "open_app",
-            "name": "快速启动",
-            "trigger": "打开",
-            "version": "0.0.0",
-            "type": "direct",
-            "summary": "直接打开本地软件（仅信任列表；群聊禁用；管理员仅私聊）",
-            "path": "open_app"
-        },
-        {
             "id": "owner_channel_bridge",
             "name": "主人跨通道近史",
             "trigger": "owner_channel_bridge",
@@ -174,6 +129,15 @@
             "type": "delegate",
             "summary": "主人按需查询桌面或 QQ 另一侧的近史摘要。默认会话仍隔离，不会自动混进 prompt。参数：desktop|qq|other ||| 可选关键词",
             "path": "owner_channel_bridge"
+        },
+        {
+            "id": "owner_console",
+            "name": "主人控制台",
+            "trigger": "owner_console",
+            "version": "1.0.0",
+            "type": "react",
+            "summary": "/帮助、/重启（仅主人）、Agent 自检、副脑任务、模型调用摘要。",
+            "path": "owner_console"
         },
         {
             "id": "qq_draw",
@@ -194,15 +158,6 @@
             "path": "qq_file_browser"
         },
         {
-            "id": "qq_help",
-            "name": "QQ功能帮助",
-            "trigger": "qq帮助",
-            "version": "1.0.0",
-            "type": "direct",
-            "summary": "在 QQ 中查看当前可用功能、常用命令和插件说明。",
-            "path": "qq_help"
-        },
-        {
             "id": "qq_music",
             "name": "QQ点歌",
             "trigger": "qq_music",
@@ -210,15 +165,6 @@
             "type": "direct",
             "summary": "通过多平台音乐网关搜索歌曲，默认先搜 QQ 音乐，搜不到再回退网易云，并直接以 QQ 语音形式回发。",
             "path": "qq_music"
-        },
-        {
-            "id": "qq_reminder",
-            "name": "QQ定时提醒",
-            "trigger": "qq提醒",
-            "version": "1.0.0",
-            "type": "direct",
-            "summary": "在 QQ 中创建仅发给自己的定时提醒，支持工作日、每天等周期提醒。",
-            "path": "qq_reminder"
         },
         {
             "id": "qq_role_switch",
@@ -230,15 +176,6 @@
             "path": "qq_role_switch"
         },
         {
-            "id": "qq_screenshot",
-            "name": "QQ远程截图",
-            "trigger": "qq截图",
-            "version": "1.0.0",
-            "type": "direct",
-            "summary": "在 QQ 中直接把当前电脑屏幕截图回发给主人。",
-            "path": "qq_screenshot"
-        },
-        {
             "id": "qq_watermark",
             "name": "QQ去水印",
             "trigger": "qq_watermark",
@@ -248,39 +185,12 @@
             "path": "qq_watermark"
         },
         {
-            "id": "system_monitor",
-            "name": "系统运维",
-            "trigger": "monitor",
-            "version": "0.0.0",
-            "type": "react",
-            "summary": "系统监控与控制中枢。支持：check / cpu / memory / disk / temperature / gpu / all / start / stop / status / set_volume / mute / set_brightness / lock_screen。",
-            "path": "system_monitor"
-        },
-        {
-            "id": "task_manager",
-            "name": "任务中枢",
-            "trigger": "task",
-            "version": "0.0.0",
-            "type": "react",
-            "summary": "任务与主动建议中枢。支持：add_task / list_tasks / complete_task / delete_task / today_schedule / check_tasks / daily_summary / suggest / check_overdue / check_urgent / start / stop / status。",
-            "path": "task_manager"
-        },
-        {
-            "id": "timer",
-            "name": "番茄钟/倒计时",
-            "trigger": "timer",
-            "version": "1.0.0",
-            "type": "react",
-            "summary": "当用户要求倒计时、专注、番茄钟时使用。参数为分钟数(数字)。",
-            "path": "timer"
-        },
-        {
             "id": "vision",
-            "name": "视觉感知",
+            "name": "屏幕",
             "trigger": "vision",
-            "version": "0.0.0",
+            "version": "1.1.0",
             "type": "observe",
-            "summary": "能够截图或拍照，并分析当前屏幕或摄像头画面",
+            "summary": "看屏幕/摄像头并分析；QQ 里说「截图发我」会把当前屏幕发回给主人。",
             "path": "vision"
         },
         {

@@ -1,0 +1,66 @@
+{
+    "name": "主人控制台",
+    "trigger": "owner_console",
+    "llm_command": "owner_console",
+    "llm_commands": [
+        "app_control",
+        "qq_help",
+        "agent_runtime",
+        "delegate_status",
+        "llm_monitor"
+    ],
+    "aliases": [
+        "模型监控",
+        "模型状态",
+        "llm监控",
+        "成本监控"
+    ],
+    "direct_command_aliases": [
+        "/重启",
+        "/远程重启",
+        "/restart",
+        "/帮助",
+        "/功能",
+        "/指令",
+        "你有什么功能",
+        "你会什么",
+        "有哪些功能",
+        "有什么指令",
+        "agent 自检",
+        "agent 工具列表",
+        "agent 能力列表",
+        "agent 安装计划",
+        "agent 位置",
+        "代码在哪",
+        "项目目录在哪",
+        "agent runtime",
+        "agent tools",
+        "agent health",
+        "副脑任务",
+        "副脑状态",
+        "委托任务",
+        "委托状态",
+        "最近副脑任务",
+        "最近委托任务"
+    ],
+    "type": "react",
+    "description": "主人侧控制台：/帮助、/重启（仅主人）、Agent 自检、副脑任务、模型调用摘要。",
+    "example_arg": "/帮助",
+    "timeout_sec": 10,
+    "version": "1.0.0",
+    "access_control": {
+        "allow_local": true,
+        "allow_remote_qq": true,
+        "allow_qq_owner": true,
+        "allow_qq_others": true,
+        "allow_group_without_at": true
+    },
+    "settings": {
+        "show_disabled": {
+            "type": "bool",
+            "label": "帮助里显示已禁用插件",
+            "description": "开启后 /帮助 列表也会列出已禁用的插件。",
+            "default": false
+        }
+    }
+}

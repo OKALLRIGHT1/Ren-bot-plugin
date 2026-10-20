@@ -12,6 +12,34 @@ logger = get_logger()
 
 
 class Plugin:
+    def get_tool_schema(self):
+        return {
+            "name": "life_manager",
+            "description": "记账与本地提醒。add_bill 金额 事项；list_bills；add_reminder 时间 事项。",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "action": {
+                        "type": "string",
+                        "enum": ["add_bill", "list_bills", "add_reminder"],
+                    },
+                    "query": {
+                        "type": "string",
+                        "description": "金额和事项，或时间加事项，例如 15 奶茶 / 10分钟后 关火",
+                    },
+                },
+                "required": ["action"],
+            },
+        }
+
+    def format_invocation(self, arguments):
+        args = dict(arguments or {})
+        action = str(args.get("action") or "list_bills").strip() or "list_bills"
+        query = str(args.get("query") or args.get("text") or "").strip()
+        if query:
+            return f"{action} {query}"
+        return action
+
     def __init__(self):
         base_dir = os.path.dirname(__file__)
         self.db_path = os.path.abspath(os.path.join(base_dir, "../../userdata.db"))

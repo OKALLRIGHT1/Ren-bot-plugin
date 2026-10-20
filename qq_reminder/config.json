@@ -1,4 +1,5 @@
 {
+    "library": true,
     "name": "QQ定时提醒",
     "trigger": "qq提醒",
     "llm_command": "qq_reminder",

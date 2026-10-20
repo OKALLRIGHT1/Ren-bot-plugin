@@ -15,6 +15,26 @@ class Plugin:
     type = "direct"
     gated_action = "system.spawn_process_trusted"
 
+    def get_tool_schema(self):
+        return {
+            "name": "open_app",
+            "description": "打开信任列表里的本地应用，例如计算器、记事本。",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "应用显示名，必须在信任列表中",
+                    }
+                },
+                "required": ["query"],
+            },
+        }
+
+    def format_invocation(self, arguments):
+        args = dict(arguments or {})
+        return str(args.get("query") or args.get("text") or "").strip()
+
     def __init__(self):
         self.app_map: Dict[str, Any] = {}
         self._load_app_config()
@@ -30,21 +50,7 @@ class Plugin:
 
                 settings = config.get("settings", {})
                 app_list = settings.get("app_list", {}).get("default", [])
-
-                for item in app_list:
-                    if "|" not in item:
-                        continue
-                    parts = item.split("|", 1)
-                    if len(parts) != 2:
-                        continue
-                    display_name, path = parts
-                    display_name = display_name.strip()
-                    path = path.strip()
-                    if "||" in path:
-                        self.app_map[display_name] = [p.strip() for p in path.split("||")]
-                    else:
-                        self.app_map[display_name] = path
-
+                self.load_app_list(app_list)
                 logger.info(f"从配置加载了 {len(self.app_map)} 个应用")
         except Exception as e:
             logger.error(f"加载应用配置失败: {e}")
@@ -53,6 +59,24 @@ class Plugin:
                 "记事本": "notepad.exe",
                 "画图": "mspaint.exe",
             }
+
+    def load_app_list(self, app_list):
+        self.app_map = {}
+        for item in app_list or []:
+            if "|" not in str(item):
+                continue
+            parts = str(item).split("|", 1)
+            if len(parts) != 2:
+                continue
+            display_name, path = parts
+            display_name = display_name.strip()
+            path = path.strip()
+            if not display_name or not path:
+                continue
+            if "||" in path:
+                self.app_map[display_name] = [p.strip() for p in path.split("||")]
+            else:
+                self.app_map[display_name] = path
 
     def reload_config(self):
         logger.info("重新加载应用配置...")

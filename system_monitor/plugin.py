@@ -50,6 +50,33 @@ logger = get_logger()
 
 
 class Plugin:
+    def get_tool_schema(self):
+        return {
+            "name": "check",
+            "description": "系统监控与控制：check/cpu/memory/disk/temperature/gpu/set_volume/mute/set_brightness/lock_screen。",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "action": {
+                        "type": "string",
+                        "description": "check/cpu/memory/disk/temperature/gpu/all/set_volume/mute/set_brightness/lock_screen/start/stop/status",
+                    },
+                    "query": {
+                        "type": "string",
+                        "description": "音量或亮度数值，例如 +20 或 50",
+                    },
+                },
+            },
+        }
+
+    def format_invocation(self, arguments):
+        args = dict(arguments or {})
+        action = str(args.get("action") or "check").strip() or "check"
+        query = str(args.get("query") or args.get("value") or "").strip()
+        if query:
+            return f"{action} ||| {query}"
+        return action
+
     def __init__(self):
         self._running = False
         self._check_interval = 60
