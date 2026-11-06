@@ -26,9 +26,9 @@
             "id": "code_agent",
             "name": "代码代理",
             "trigger": "code_agent",
-            "version": "0.0.0",
+            "version": "0.2.0",
             "type": "direct",
-            "summary": "把代码项目分析或修改任务委托给本机 Codex CLI / Claude Code。修改模式必须确认。",
+            "summary": "委托本机 Codex / DeepSeek Harness / Claude Code 执行后台任务，查看进度、取消、继续；结果回到发起会话。",
             "path": "code_agent"
         },
         {
@@ -201,6 +201,15 @@
             "type": "direct",
             "summary": "识别新三国经典台词关键词并回发对应音频文件。",
             "path": "xinsanguo_voice"
+        },
+        {
+            "id": "mcp_tools",
+            "name": "MCP 工具桥",
+            "trigger": "mcp_tools",
+            "version": "0.1.0",
+            "type": "react",
+            "summary": "按允许列表调用可选 MCP 服务器，支持 stdio 和 streamable HTTP；仅本地使用。",
+            "path": "mcp_tools"
         }
     ]
 }

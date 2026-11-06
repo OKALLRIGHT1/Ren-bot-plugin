@@ -1,0 +1,34 @@
+{
+  "name": "MCP 工具桥",
+  "trigger": "mcp_tools",
+  "llm_command": "mcp_tools",
+  "type": "react",
+  "version": "0.1.0",
+  "description": "按允许列表调用可选 MCP 服务器，支持 stdio 和 streamable HTTP；仅本地使用。",
+  "timeout_sec": 120,
+  "access_control": {
+    "allow_local": true,
+    "allow_remote_qq": false,
+    "allow_qq_owner": false,
+    "allow_qq_others": false,
+    "allow_group_without_at": false
+  },
+  "settings": {
+    "servers": {
+      "default": [],
+      "description": "MCP 服务器对象数组；配置 name、transport、command/args 或 url。"
+    },
+    "allowed_server_names": {
+      "default": [],
+      "description": "允许调用的服务器 slug 列表。"
+    },
+    "allowed_tool_names": {
+      "default": [],
+      "description": "允许调用的完整工具名列表，例如 mcp.demo.read。"
+    },
+    "allow_all_remote_tools": {
+      "default": false,
+      "description": "允许所有已配置远端工具；默认关闭。"
+    }
+  }
+}

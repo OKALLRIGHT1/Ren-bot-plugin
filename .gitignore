@@ -1,5 +1,8 @@
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+.env.*
 userdata.db
 **/data/cache/
