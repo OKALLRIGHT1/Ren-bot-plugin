@@ -61,6 +61,8 @@ def test_decoder_requires_terminal_success(provider, events, ok):
 
 
 async def test_real_subprocess_streams_before_exit_and_bounds_large_output(tmp_path, monkeypatch):
+    monkeypatch.setenv("PYTHONUTF8", "0")
+    monkeypatch.setenv("PYTHONIOENCODING", "cp1252")
     script = tmp_path / "worker.py"
     script.write_text('''import json, sys, time
 prompt = sys.stdin.read()

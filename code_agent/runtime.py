@@ -223,6 +223,10 @@ async def run_code_agent(request: CodeAgentRequest, on_event=lambda event: None)
     argv = build_argv(request)
     started = time.monotonic()
     env = dict(os.environ)
+    # The stdin/JSONL wire format is UTF-8, independent of Windows code pages.
+    # Python-based launchers/helpers otherwise inherit legacy console encodings.
+    env["PYTHONUTF8"] = "1"
+    env["PYTHONIOENCODING"] = "utf-8"
     if request.dsh_home and request.provider == "deepseek_harness":
         env["DSH_HOME"] = str(Path(request.dsh_home).expanduser().resolve())
     kwargs = {"creationflags": subprocess.CREATE_NO_WINDOW} if os.name == "nt" else {"start_new_session": True}
